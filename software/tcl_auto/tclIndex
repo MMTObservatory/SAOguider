@@ -1,0 +1,6 @@
+# Tcl autoload index file, version 2.0
+source $dir/tclIndex.
+source $dir/tclIndex.msg
+source $dir/tclIndex.table
+source $dir/tclIndex.tcl
+source $dir/tclIndex.udp

@@ -1,0 +1,115 @@
+# Gui Parameters
+set GuiGeometry  600x800+650+20
+
+# Guide Camera Parameters
+#
+set NumberOfCameras	1
+
+set Camera1_Name	Full
+
+set Camera1_XSize	640	# pixels
+set Camera1_YSize	480	# pixels
+set Camera1_XPixelSize	0.046   # arc sec.
+set Camera1_YPixelSize	0.046   # arc sec.
+set Camera1_Binning	1	# Overridden by Binning below
+
+set Camera1_X	        0	# arc sec.
+set Camera1_Y	        0
+set Camera1_Rotation	180	# deg. (position angle of +Y with rotator at 0deg.)
+set Camera1_Parity	-1	# 1 or -1
+set Camera1_Defocus	0.0	# arc sec. (used by Hectospec)
+set Camera1_Split       1       # Use split mode 
+set Camera1_Bitpix      16
+
+# Guide Image Paramers
+#
+set NumberOfImages	3
+
+set Image1_Name		Full
+set Image1_Camera	1
+set Image1_Exposure	2
+
+set Image1_Grid		2 1	
+set Image1_GridRotate	0	# Don't add telescope rotation to GridRotation
+set Image1_GridRotation	0	# Show the Minicam full image horizontally
+set Image1_GridZoom     0.5
+set Image1_ShmKeys      210
+set Image1_ShmSize      619200
+
+set Image2_Name		Box1
+set Image2_Camera	1	# Which camera parameters describe this image
+set Image2_Exposure	0	# Overridden by Exposure below
+set Image2_Defocus	0	# arc sec. (used by Minicam)
+
+set Image2_Grid		1 1	# GUI grid placement
+set Image2_GridWidth	0	# default
+set Image2_GridHeight	0	# default
+set Image2_GridRotate	1	# Add telescope rotation to GridRotation
+set Image2_GridRotation	0	# No extra guide image rotation
+set Image2_GridZoom     1       # GUI zoom factor
+set Image2_ShmKeys      201     
+set Image2_ShmSize      619200
+set Image2_FullImage    1       # Image from which this box came
+
+set Image3_Name		Box2
+set Image3_Camera	1
+set Image3_Exposure	0	# Overridden by GuideImageExposure below
+set Image3_Defocus      0	# arc sec. (used by Minicam)
+
+set Image3_Grid		1 2	
+set Image3_GridRotate	1	# Add telescope rotation to GridRotation
+set Image3_GridRotation	0	# No extra guide image rotation
+set Image3_GridZoom     1
+set Image3_ShmKeys      202
+set Image3_ShmSize      619200
+set Image3_FullImage    1
+
+# Guide Box Parameters
+#
+set  NumberOfBoxes	2
+set  ActiveBoxList  	1 2
+
+set Box1_Image		2
+set Box1_X		290
+set Box1_Y		248
+
+set Box2_Image		3
+set Box2_X  		320
+set Box2_Y  		240
+
+# Top Level Guide Parameters
+#
+set BoxSize		3.0	# arc sec.
+set ImageSize		9.0	# arc sec.
+set Exposure		1
+set BackgroundWidth	10	# binned pixels
+
+set NumberOfErrors	2
+
+set Error1_Name		Az
+set Error1_Gain		0.5
+set Error1_Offset	0.0
+set Error1_Step		1
+set Error1_Snrmin	1
+set Error1_Sample	1
+set Error1_Active	1
+
+set Error2_Name		El
+set Error2_Gain		0.5
+set Error2_Offset	0.0
+set Error2_Step		1
+set Error2_Snrmin	1
+set Error2_Sample	1
+set Error2_Active	1
+
+set FullImageList       1
+
+# Telescope Parameters
+#
+set TelescopeDiameter	6.5	# meters
+set PrimaryFRatio	1.25
+set CassFRatio	9
+set FocusUnits		1e-6	# meters
+
+guidelog 		/mmt/Logs/guider/guide.log
+

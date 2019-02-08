@@ -1,0 +1,17 @@
+I have added a new function to the saoguider gui that we
+are now using for stella, videoscope, and mmtag.
+In the full frame, hold down the ctrl key and click on a star
+in the field with the left mouse button.  An offset command
+will be sent to the telescope so that the star moves into the
+lowest numbered active box.  If you ctrl-LMB on a star in either
+of the box frames, the star will move to the center of that image.
+If you also hold down the shift key, the move will be only 10%
+of the distance.  This can be used for fine tuning.
+
+Regarding the lock status,
+if you are using only one star, make sure the unused
+box is deactivated via the top bar guide menu.
+Also, in the lower right of the guider control window,
+set the lock tolerances for az and el to a non-zero value. 
+
+05/16/2008

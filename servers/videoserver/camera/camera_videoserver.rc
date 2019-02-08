@@ -1,0 +1,83 @@
+# Snappy
+#
+
+set NumberOfFrames	1
+
+set Frame1_NAccum	3
+
+setproc   0 0 P
+setproc   0 1 P
+setproc   0 2 P
+
+
+setblack  0 0
+setwhite  0 0
+
+
+set NumberOfImages 3
+
+# Image1 -- full frame
+#
+set Image1_Frame	0
+set Image1_Accum	0
+set Image1_Type		1
+set Image1_ShmKey	210
+
+set Image1_X0		 0
+set Image1_Y0		 0
+set Image1_X		320
+set Image1_Y		240
+
+set Image1_Width	640
+set Image1_Height	480
+set Image1_Rad		 15
+set Image1_BkRad	 30
+set Image1_BkWid	  5
+set Image1_Expose	0.034
+set Image1_BScaleFrom	0
+
+
+# Image2 -- guide box
+#
+set Image2_Frame	0
+set Image2_Accum	1
+set Image2_Type		0
+set Image2_ShmKey	201
+
+set Image2_X0		 0
+set Image2_Y0		 0
+set Image2_X		100
+set Image2_Y		100
+
+set Image2_Width	200
+set Image2_Height	200
+set Image2_Rad		 15
+set Image2_BkRad	 25
+set Image2_BkWid	  5
+set Image2_Expose	0.034
+
+
+# Image3 -- guide box
+#
+set Image3_Frame	0
+set Image3_Accum	2
+set Image3_Type		0
+set Image3_ShmKey	202
+
+set Image3_X0		 0
+set Image3_Y0		 0
+set Image3_X		100
+set Image3_Y		100
+
+set Image3_Width	200
+set Image3_Height	200
+set Image3_Rad		 15
+set Image3_BkRad	 25
+set Image3_BkWid	  5
+set Image3_Expose	0.034
+
+start   0
+resume  0
+
+#expose 1 2
+

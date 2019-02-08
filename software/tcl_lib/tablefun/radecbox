@@ -1,0 +1,35 @@
+# Compute the four corners from center and width
+#
+function radecbox(ra, dec, width, height	, r1, r2, d1, d2)
+{
+    if ( !height ) {
+	height = width
+    }
+
+	d1 = dec - height / 2.0 + 0:00:00
+	if ( d1 <= -90.0 ) {
+		d1 = -90.0
+		d2 = dec + height / 2.0 + 0:00:00
+		r1 =  0.0
+		r2 = 24.0
+	} else {
+		d2 = dec + ( height / 2.0 ) + 0:00:00
+		if ( d2 >=  90.0 ) {
+			d1 = dec - height / 2.0
+			d2 = 90.0
+			r1  = 0.0
+			r2  = 24.0
+		} else {
+		    if ( dec > 0.0 )	cosdec = abs(cos(d2r(d1)))
+		    else		cosdec = abs(cos(d2r(d2)))
+
+		    r1 = ra - d2h(width) / 2 / cosdec + 0:00:00
+		    r2 = ra + d2h(width) / 2 / cosdec + 0:00:00
+
+		    if ( r1 <  0.0 ) r1 += 24:00:00
+		    if ( r2 > 24.0 ) r2 -= 24:00:00
+		}
+	}
+
+	return [ r1, r2, d1, d2 ]
+}

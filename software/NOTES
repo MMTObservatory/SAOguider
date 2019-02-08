@@ -1,0 +1,28 @@
+The funtools rpms are orphaned in Fedora 16.  I was able to install
+funtools-libs (both i686 and x86_64) from f15, but not funtools-devel. Hence,
+the symbolic links lib-m*/libfuntools.so and the file src/include/fitsy.h are
+included here.
+
+
+It is not possible to install both the i686 and x86_64 versions of
+GraphicsMagick-devel rpm at the same time.  Hence, it is not possible to build
+camera_videoserver (which uses GraphicsMagick) for the version that is not
+installed.
+
+
+The guidegui binary appears to be a copy of a 32-bit ds9, version 3.0.2
+
+The tcl/ subdirectory holds a copy of the tcl files sourced by guidegui.
+The only changes from the original were to reroot to SAOGUIDER_ROOT.
+
+The tcl_auto/ subdirectory is a copy of the original directory of tcl files
+that are autoloaded by guidegui.  No changes.  I doubt that all the
+files are really used by guidegui.
+
+The tcl_lib/ subdirectory is a copy of the original directory of library files
+that are used by some of guidegui's tcl files.  I don't know which ones.
+No changes.  I doubt that all the files are really used by guidegui.
+
+The tcl_bin/ subdirectory hold a copy of the tcl scripts to handle the
+catalog access portion of videoscope_point.tcl (used only by
+iccd85/guidegui.csh). No changes.  May be unused.

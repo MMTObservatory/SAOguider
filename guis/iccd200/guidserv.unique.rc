@@ -1,0 +1,22 @@
+set Camera1_XSize	640	# pixels
+set Camera1_YSize	480	# pixels
+set Camera1_XPixelSize	0.1707  # arc sec.
+set Camera1_YPixelSize	0.1707  # arc sec.
+set Camera1_Rotation	0	# deg. (position angle of +Y with rotator at 0deg.)
+set Camera1_Parity      -1      # 1 or -1
+set Image1_Exposure	2
+set Image1_GridRotation	0	# Show the Minicam full image horizontally
+set Image1_GridZoom     0.5
+set Image2_GridZoom     2       # GUI zoom factor
+set Image3_GridZoom     2
+set Box1_X		320
+set Box1_Y		240
+set Box2_X  		280
+set Box2_Y  		240
+set BoxSize		6.0	# arc sec.
+set ImageSize		18.0	# arc sec.
+set Exposure		2
+set BackgroundWidth	4	# binned pixels
+set Error1_Gain		0.5
+set Error2_Gain		0.5
+guidelog                /mmt/Logs/guider/guide.log

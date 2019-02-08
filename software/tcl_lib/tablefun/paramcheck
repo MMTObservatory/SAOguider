@@ -1,0 +1,44 @@
+# Check to see that all the parameters on the command line are
+# actually parameters for this awk program.
+#
+function paramcheck(prog, params	, param, parameters, n, i, j, arg)
+{
+	n = split(params, parameters, "\|")
+
+	for ( i = 1; i < ARGC; i++ ) {
+	    n = split(ARGV[i], param, "=")
+
+# 	    Re-assemble any parameter values with "=" in 
+#	    thier value part.
+	    if ( n > 2 )
+		for ( j = 3; j <= n; j++ ) param[2] = param[2] "=" param[j]
+
+	    if ( n >= 2 ) {
+		if ( parameters[param[1]] == "POSITIONAL" ) {
+		    print prog ": " ARGV[i] ": " param[1] " has already been given as a positional."
+		    exit(1)
+		}
+
+	        if ( param[1] !~ params ) {
+		    printf("%s: no parameter: \"%s\".\n", prog, param[1])
+		    exit 1
+		}
+	    } else {
+#		See if this is a boolean switch type guy
+#
+		if ( ARGV[i] ~ /[a-zA-Z0-9]+[-+]$/ ) {
+		    arg = ARGV[i]; sub("[+-]$", "", arg)
+		    if ( arg ~ params )
+			ARGV[i] = arg "=" ((ARGV[i] ~ /\+$/) ? 1 : 0)
+		    else {
+			printf("%s: no parameter: \"%s\".\n", prog, param[1])
+	                exit 1
+		    }
+		} else {
+		    ARGV[i] = parameters[i] "=" param[1]
+		    parameters[parameters[i]] = "POSITIONAL"
+		}
+	    }
+	}
+} 
+

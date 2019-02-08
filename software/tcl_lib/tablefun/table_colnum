@@ -1,0 +1,29 @@
+# Return the column number of the named col.
+#
+function table_colnum(col) {
+	return __Column[col]
+}
+
+# Init the __Column value
+#
+# This works because BEGIN clauses are executed in the
+# order they apear in the file and before any thing 
+# else.
+#
+BEGIN {
+	table_init()
+}
+
+function table_init()
+{
+	if ( __table_init ) return
+
+	__table_init = 1
+
+	__N_Offset = split(Header, __Offset, " *	 *")
+	sub(/^ */, "", __Offset[1]) 
+	sub(/ *$/, "", __Offset[__N_Offset]) 
+	for ( i in __Offset ) {
+		__Column[__Offset[i]] = i
+	}
+}

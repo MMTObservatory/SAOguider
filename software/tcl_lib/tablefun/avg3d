@@ -1,0 +1,7 @@
+#
+# average of ND columns in a 3d compute
+#
+function avg3d(column,	s, i) {
+	return sum3d(column)/ND;
+}
+

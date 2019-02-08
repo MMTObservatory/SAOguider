@@ -1,0 +1,46 @@
+/* iistcl.h
+ */
+
+typedef struct _IIS {
+	XimData xim;
+	Tcl_Interp *interp;
+	char	*open;
+	char	*close;
+	char	*erase;
+	char	*frame;
+	char	*title;
+	char	*setcur;
+	char	*getcur;
+	char	*crmode;
+	char	*getwcs;
+	char	*setwcs;
+	char	*read;
+	char	*write;
+} *IIS;
+
+
+#ifdef WIN32
+#   define WIN32_LEAN_AND_MEAN
+#   include <windows.h>
+#   undef WIN32_LEAN_AND_MEAN
+ 
+/*
+ * VC++ has an alternate entry point called DllMain, so we need to rename
+ * our entry point.
+ */
+ 
+#   if defined(_MSC_VER)
+#       define EXPORT(a,b) __declspec(dllexport) a b
+#       define DllEntryPoint DllMain
+#   else
+#       if defined(__BORLANDC__)
+#           define EXPORT(a,b) a _export b
+#       else
+#           define EXPORT(a,b) a b
+#       endif
+#   endif
+ 
+#else
+#   define EXPORT(a,b) a b
+#endif  /* WIN32 */
+

@@ -1,0 +1,15 @@
+#
+# sum of ND columns in a 3d compute
+#
+function sum3d(column,	s, i) {
+	if ( ND == 1 ) {
+	    s = $table_colnum(column);
+	} else {
+	    s = 0;
+	    for ( i = 1; i <= ND; i++ ) {
+		    s += colvalue(column "_" i);
+	    }
+	}
+
+	return s;
+}

@@ -1,0 +1,18 @@
+
+# most of these camconfig parameters don't matter
+# there are just left over from the simulation code in mount.c
+# I didn't bother to try to remove them - Skip
+# There is also a confusion between cameras and images that I didn't remove.
+# They both refer to the same object.
+#
+# The parameters that do matter are shid, chipheight. chipwidth
+# The imageconfig parameters are updated by the gui.
+
+camconfig 1 shid=310 saotng- focus=+1 xparity=-1 chipheight=512 chipwidth=512 skyx=70.7 skyy=-70.7 rotation=45 scale=0.0455
+camconfig 2 shid=301 saotng- focus=+1 xparity=-1 chipheight=512 chipwidth=512 skyx=70.7 skyy=-70.7 rotation=45 scale=0.0455
+camconfig 3 shid=302 saotng- focus=-1 xparity=-1 chipheight=512 chipwidth=512 skyx=70.7 skyy=-70.7 rotation=45 scale=0.0455
+
+imageconfig 1 x=256 y=256 size=512 binning=1
+imageconfig 2 x=256 y=256 size=250 binning=1
+imageconfig 3 x=256 y=256 size=250 binning=1
+

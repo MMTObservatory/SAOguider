@@ -1,0 +1,6 @@
+# Tcl autoload index file, version 2.0
+ 
+set auto_index(dp_recv)  [list load [file join $::env(MMTILIB) libdp40.so]]
+set auto_index(dp_send) [list load [file join $::env(MMTILIB) libdp40.so]]
+set auto_index(dp_connect) [list load [file join $::env(MMTILIB) libdp40.so]]
+

@@ -1,0 +1,22 @@
+set Camera1_XSize	512	# pixels
+set Camera1_YSize	512	# pixels
+set Camera1_XPixelSize	0.081   # arc sec.
+set Camera1_YPixelSize	0.081   # arc sec.
+set Camera1_Rotation	-80	# deg. (position angle of +Y with rotator at 0deg.)
+set Camera1_Parity      1      # 1 or -1
+set Image1_Exposure	1
+set Image1_GridRotation	0
+set Image1_GridZoom     1
+set Image2_GridZoom     4       # GUI zoom factor
+set Image3_GridZoom     4
+set Box1_X		256
+set Box1_Y		256
+set Box2_X  		150
+set Box2_Y  		256
+set BoxSize		3.0	# arc sec.
+set ImageSize		9.0	# arc sec.
+set Exposure		1
+set BackgroundWidth	2	# binned pixels
+set Error1_Gain		1.0
+set Error2_Gain		1.0
+guidelog                /mmt/Logs/guider/guide.log

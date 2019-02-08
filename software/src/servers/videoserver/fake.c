@@ -1,0 +1,6 @@
+
+SetBlackLevel() {}
+SetWhiteLevel() {}
+SetSyncChannel() {}
+SetVideoChannel() {}
+

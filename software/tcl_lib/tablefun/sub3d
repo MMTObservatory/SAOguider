@@ -1,0 +1,12 @@
+#
+# subtract table 2 from table 1 cellwise
+#
+function sub3d(column) {
+	if ( ND == 2 ) {
+	    return colvalue(column "_" 1) - colvalue(column "_" 2);
+	} else {
+	    print "usage: Must have exactally two tables to subtract\n"	> "/dev/stderr"
+	    exit 1
+	}
+}
+

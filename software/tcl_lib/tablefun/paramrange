@@ -1,0 +1,50 @@
+# Check the range of a parameter
+#
+#
+function paramrange(prog, param, type, value, Min, Max)
+{
+	if ( type !~ "n|s" ) {
+		print prog ": unknown parameter type " type " for: " param
+		exit(1)
+	}
+
+	if ( type == "n" ) {
+	    if ( value == "" ) {
+		print prog ": " param " not set" > "/dev/stderr"
+		exit(1)
+	    }
+
+	    if ( Min ~ "\|" && man == "" ) {
+	      if ( value !~ Min ) {
+		print prog ": " param " not in " Min > "/dev/stderr"
+		exit(1)
+	      }
+	    }
+
+	    if ( Min != "" && Max != "" ) {
+		if ( value < Min || value > Max ) {
+		    print prog ":", param " out of range (" Min " : " Max ")"
+		    exit(1);
+		}
+	    }
+	    if ( Min != "" ) {
+		if ( value < Min ) {
+		    print prog ": " param " less than min : " Min > "/dev/stderr"
+		    exit(1)
+		}
+	    }
+	    if ( Max != "" ) {
+		if ( value > Max ) {
+		    print prog ": " param " greater than max : " Max > "/dev/stderr"
+		    exit(1)
+		}
+	    }
+	}
+
+	if ( type == "s" ) {
+	    if ( value !~ Min ) {
+		print prog ":", param ":", "not in " Min > "/dev/stderr"
+		exit(1)
+	    }
+	}
+}

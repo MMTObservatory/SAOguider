@@ -1,0 +1,5 @@
+# Tcl autoload index file, version 2.0
+
+global env
+set auto_index(table) [list load [file join $env(MMTILIB) Tktable.so]]
+
