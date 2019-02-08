@@ -22,9 +22,9 @@ then sources a large number of tcl files.  See software/NOTES.
 
 There are currently three types of cameras used:  
 
-    - camaz -- ITL's AZCAM controlled frame-transfer CCD guide cameras.
-    - videoserver -- Dallan Porter's Axis videoserver networked framegrabber based video cameras.
-    - zwo -- The ZWO ASI1600MM CMOS camera that replaced the videoscope intensified video camera.
+* **camaz** -- ITL's AZCAM controlled frame-transfer CCD guide cameras.
+* **videoserver** -- Dallan Porter's Axis videoserver networked framegrabber based video cameras.
+* **zwo** -- The ZWO ASI1600MM CMOS camera that replaced the videoscope intensified video camera.
 
 Each camera type needs its own camera server and guider server.  The servers/
 directory holds subdirectories for each camera type.  Each camera type
